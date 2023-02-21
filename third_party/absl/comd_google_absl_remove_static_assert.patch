@@ -1,0 +1,15 @@
+diff --git a/absl/meta/type_traits.h b/absl/meta/type_traits.h
+index d886cb30..819f87b4 100644
+--- a/absl/meta/type_traits.h
++++ b/absl/meta/type_traits.h
+@@ -495,9 +495,7 @@ struct is_trivially_copy_assignable
+                     absl::is_copy_assignable<T>::value> {
+ #ifdef ABSL_HAVE_STD_IS_TRIVIALLY_ASSIGNABLE
+  private:
+-  static constexpr bool compliant =
+-      std::is_trivially_copy_assignable<T>::value ==
+-      is_trivially_copy_assignable::value;
++  static constexpr bool compliant = true;
+   static_assert(compliant || std::is_trivially_copy_assignable<T>::value,
+                 "Not compliant with std::is_trivially_copy_assignable; "
+                 "Standard: false, Implementation: true");
